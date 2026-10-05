@@ -384,3 +384,363 @@ h3,
   margin: 0;
   background: rgba(242, 169, 0, 0.05);
 }
+/* ===================================================== */
+/* CENTRADO Y AJUSTE DE TEXTO E IMÁGENES                   */
+/* ===================================================== */
+
+/* ---------- TEXTO CENTRADO EN ENCABEZADOS ---------- */
+.encabezado-tp,
+.encabezado-tp h1,
+.encabezado-tp h3,
+.encabezado-tp p,
+.encabezado-tp ul,
+.encabezado-tp li {
+  text-align: center;
+}
+
+.encabezado-tp ul {
+  list-style-position: inside; /* las viñetas se ven centradas */
+  padding-left: 0;
+}
+
+.encabezado-tp li {
+  margin-bottom: 4px;
+}
+
+/* ---------- TEXTOS DE LAS TARJETAS CENTRADOS ---------- */
+.tarjeta-pregunta {
+  text-align: center;
+}
+
+.tarjeta-pregunta summary {
+  justify-content: center;
+}
+
+.titulo-pregunta,
+.pregunta-completa,
+.respuesta,
+.check-aprendido {
+  text-align: center;
+}
+
+/* ---------- PÁRRAFOS SUELTOS Y LISTAS DEL HOME ---------- */
+.card-dark p,
+.card-dark ul,
+.card-dark li,
+.card p,
+.card ul,
+.card li {
+  text-align: center;
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+/* ---------- IMÁGENES: CENTRADAS Y AJUSTADAS ---------- */
+.respuesta img,
+.tarjeta-pregunta img,
+.card-dark img,
+.card img,
+img {
+  display: block;
+  margin: 16px auto; /* centrada horizontalmente */
+  max-width: 100%; /* no se sale del contenedor */
+  height: auto; /* mantiene proporción */
+  border-radius: 6px;
+}
+
+/* ---------- IFRAMES Y VIDEOS ---------- */
+.respuesta iframe,
+.tarjeta-pregunta iframe,
+.card-dark iframe,
+.card iframe,
+.respuesta video,
+.tarjeta-pregunta video {
+  display: block;
+  margin: 16px auto;
+  max-width: 100%;
+  border-radius: 6px;
+}
+
+/* ---------- TÍTULOS PRINCIPALES CENTRADOS ---------- */
+h1,
+h2,
+.accent-yellow {
+  text-align: center;
+}
+
+/* ---------- QUIZ CENTRADO ---------- */
+.quiz-final,
+.quiz-final h2,
+.pregunta-quiz,
+.pregunta-quiz p,
+.feedback {
+  text-align: center;
+}
+
+.pregunta-quiz button {
+  text-align: center; /* antes estaba a la izquierda */
+}
+
+/* ---------- CONTROLES CENTRADOS ---------- */
+.controles-tp {
+  justify-content: center;
+}
+
+.progreso-tp {
+  text-align: center;
+}
+
+#contador-progreso {
+  text-align: center;
+}
+
+/* ===================================================== */
+/* RESPONSIVE - Mobile First adjustments                   */
+/* ===================================================== */
+
+/* ---------- TABLETS Y MÓVILES GRANDES (≤ 768px) ---------- */
+@media (max-width: 768px) {
+  /* Header apilado */
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding-bottom: 12px;
+  }
+
+  .header-nav ul {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .header-nav a {
+    font-size: 14px;
+  }
+
+  /* Main con padding reducido */
+  body {
+    padding: 12px;
+  }
+
+  main {
+    padding: 0;
+  }
+
+  /* Título principal más chico */
+  h1 {
+    font-size: 1.4rem;
+    line-height: 1.3;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  /* Índice lateral deja de flotar y se apila arriba */
+  .indice-tp {
+    position: static;
+    float: none;
+    width: 100%;
+    margin: 0 0 20px 0;
+    max-height: none;
+    padding: 12px;
+  }
+
+  .indice-tp ol {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 12px;
+  }
+
+  .indice-tp li {
+    font-size: 11px;
+    margin-bottom: 4px;
+  }
+
+  /* Controles en columna */
+  .controles-tp {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .boton-control {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .progreso-tp {
+    min-width: 100%;
+  }
+
+  /* Tarjetas de preguntas */
+  .tarjeta-pregunta summary {
+    padding: 12px 14px;
+    gap: 10px;
+  }
+
+  .num-pregunta {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+  }
+
+  .titulo-pregunta {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .pregunta-completa {
+    padding: 10px 14px 0 14px;
+    font-size: 13px;
+  }
+
+  .respuesta {
+    padding: 12px 14px;
+    font-size: 13px;
+  }
+
+  .check-aprendido {
+    padding: 10px 14px;
+    font-size: 12px;
+  }
+
+  /* Quiz final */
+  .quiz-final {
+    padding: 16px;
+    margin-top: 32px;
+  }
+
+  .pregunta-quiz button {
+    padding: 12px 14px;
+    font-size: 13px;
+  }
+
+  /* Cards generales */
+  .card-dark,
+  .card {
+    padding: 14px;
+    margin-bottom: 12px;
+  }
+
+  /* Lista del grupo */
+  .integrante-item {
+    padding: 10px;
+  }
+
+  /* Imágenes dentro del contenido */
+  .respuesta img,
+  .tarjeta-pregunta img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Iframes de video */
+  iframe,
+  video {
+    max-width: 100%;
+  }
+}
+
+/* ---------- MÓVILES CHICOS (≤ 480px) ---------- */
+@media (max-width: 480px) {
+  body {
+    padding: 8px;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  h2 {
+    font-size: 1.05rem;
+  }
+
+  /* Índice en una sola columna si la pantalla es muy angosta */
+  .indice-tp ol {
+    grid-template-columns: 1fr;
+  }
+
+  /* Numeración y títulos más compactos */
+  .num-pregunta {
+    width: 22px;
+    height: 22px;
+    font-size: 11px;
+  }
+
+  .titulo-pregunta {
+    font-size: 12px;
+  }
+
+  .pregunta-completa,
+  .respuesta {
+    font-size: 12.5px;
+    line-height: 1.55;
+  }
+
+  /* Botones del quiz en una sola columna */
+  .pregunta-quiz button {
+    font-size: 12px;
+    padding: 10px 12px;
+  }
+
+  /* Header aún más chico */
+  .logo img {
+    height: 32px;
+  }
+
+  .header-nav a {
+    font-size: 13px;
+  }
+}
+
+/* ---------- ORIENTACIÓN HORIZONTAL EN MÓVILES ---------- */
+@media (max-height: 500px) and (orientation: landscape) {
+  .indice-tp {
+    max-height: 40vh;
+  }
+}
+
+/* ---------- PANTALLAS GRANDES (≥ 1200px) ---------- */
+@media (min-width: 1200px) {
+  /* Un poco más de aire en pantallas amplias */
+  main.container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .indice-tp {
+    width: 240px;
+  }
+}
+
+/* ---------- IMPRESIÓN ---------- */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  .controles-tp,
+  .indice-tp,
+  .check-aprendido,
+  .quiz-final,
+  header {
+    display: none;
+  }
+
+  .tarjeta-pregunta {
+    break-inside: avoid;
+    border: 1px solid #ccc;
+  }
+
+  .tarjeta-pregunta[open] {
+    page-break-after: always;
+  }
+}

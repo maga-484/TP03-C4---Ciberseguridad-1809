@@ -15,7 +15,7 @@
     {
       "P": "3. Dibujá la conexión - Dibujá el recorrido cliente → Internet → servidor de la tienda. Explicá para qué sirve HTTPS. ¿Qué es una máquina virtual y por qué puede servir para probar cambios?",
       "R": "Diagrama de Flujo de Red:\n[Dispositivo Cliente] → [Router Local / ISP] → [Red Pública / Internet] → [Firewall / Router Perimetral] → [Servidor Web en la Nube]\n\nFunción del Protocolo HTTPS (Hypertext Transfer Protocol Secure):\nHTTPS es un protocolo de capa de aplicación que encapsula el tráfico HTTP estándar sobre un canal cifrado mediante TLS/SSL (Transport Layer Security). Proporciona tres controles de seguridad esenciales:\n- Confidencialidad: Cifra los datos transmitidos (credenciales, números de tarjetas, pedidos) impidiendo la interceptación por ataques de intermediario (Man-in-the-Middle).\n- Integridad: Emplea códigos de autenticación de mensajes (HMAC) para asegurar que la información no sea alterada en tránsito.\n- Autenticación del Servidor: Utiliza certificados digitales emitidos por una Autoridad Certificadora (CA) para validar la identidad legítima del servidor de la tienda frente al cliente.\n\nMáquina Virtual (VM) y Entornos de Prueba:\nUna Máquina Virtual es una representación por software de una computadora física que ejecuta un sistema operativo y aplicaciones de forma aislada sobre un programa hipervisor. En la gestión de cambios, permite crear un entorno de pruebas (Staging/Sandbox) réplica de producción. Esto posibilita probar actualizaciones de software, parches o modificaciones de código sin comprometer la disponibilidad ni exponer vulnerabilidades en el entorno comercial en vivo.",
-      "I": "",
+      "I": "img/tp03-p03-red-https.png",
       "V": ""
     },
     {
