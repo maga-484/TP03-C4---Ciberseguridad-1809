@@ -1,0 +1,64 @@
+{
+  "preguntas_y_respuestas": [
+    {
+      "P": "1. Para pensar - Alguien cambia un precio sin permiso. ¿Qué principio se afecta más?",
+      "R": "Se afecta la integridad, porque el dato (el precio) fue modificado sin autorización y ya no es confiable. No es confidencialidad (nadie lo robó ni lo espió) ni disponibilidad (el sistema sigue funcionando). El problema es que el dato dejó de ser correcto.",
+      "I": "",
+      "V": ""
+    },
+    {
+      "P": "2. Reconocé el equipo - Elemento: PC (Hardware), Mouse (Hardware), Navegador (Software), Aplicación de ventas (Software). Dispositivo de entrada elegido: el mouse.",
+      "R": "Permite ingresar datos como hacer clic en botones, seleccionar productos, mover el cursor y confirmar acciones dentro de la aplicación de ventas.",
+      "I": "",
+      "V": ""
+    },
+    {
+      "P": "3. Dibujá la conexión - [Cliente / navegador] -> [Router] -> [Internet] -> [Servidor de la tienda]. ¿Para qué sirve HTTPS? ¿Qué es una máquina virtual y por qué sirve para probar cambios?",
+      "R": "HTTPS: Para que la comunicación entre el cliente y el servidor viaje cifrada. Así, si alguien intercepta el tráfico, no puede leer los datos en texto claro (contraseñas, pedidos, pagos).\n\nMáquina Virtual: Es una computadora \"simulada\" dentro de otra. Sirve porque podés probar configuraciones nuevas sin arriesgar el equipo real. Si algo sale mal, borrás la VM y listo.",
+      "I": "",
+      "V": ""
+    },
+    {
+      "P": "4. Elegí qué cuidar - Activos (Pedidos, Cuentas, Web, Cámara). ¿Qué dato de clientes evitaría compartir con una IA?",
+      "R": "Nombre completo, dirección, teléfono, correo y datos de tarjeta. Usaría datos inventados (por ejemplo, \"Cliente Demo 1\", \"Calle Falsa 123\").",
+      "I": "",
+      "V": ""
+    },
+    {
+      "P": "5. Detectá el engaño - Mensaje: \"Cambiamos la cuenta de cobro. Transferí ahora y no llames al contacto de siempre.\". Dos señales sospechosas y método de verificación.",
+      "R": "Dos señales sospechosas:\n1. Piden cambiar la cuenta de cobro por un canal informal (mensaje).\n2. Dicen \"no llames\", lo que busca evitar que verifiques por otro medio.\n\n¿Cómo lo verificaría?\nLlamaría al proveedor por el teléfono oficial que ya tenía registrado (no el del mensaje). Si no atienden, iría personalmente o escribiría desde un correo conocido. Nunca transfiero sin confirmar por un canal distinto al que recibí el aviso.",
+      "I": "",
+      "V": ""
+    },
+    {
+      "P": "6. Decidí una prioridad - Problemas: todos pueden cambiar los precios / la impresora imprime lento.",
+      "R": "Elijo: el control de precios.\n\nPor qué: la impresora lenta molesta, pero el precio mal cambiado genera pérdida de dinero, reclamos y desconfianza. Es un problema de seguridad (integridad + permisos).\n\nSolución sencilla:\nCrear dos roles de usuario:\n- Vendedor: puede ver precios y registrar pedidos, pero no modificarlos.\n- Administrador: es el único que puede cambiar precios.\n\nAsí queda claro quién hizo cada cambio.",
+      "I": "",
+      "V": ""
+    },
+    {
+      "P": "7. Armá reglas simples (SGSI) - Reglas de Precios, Cuentas, Avisos y Revisor.",
+      "R": "Reglas:\n1. Precios: Solo el administrador puede modificar precios. Cada cambio queda registrado con usuario y fecha. (Responsable: Dueño de la tienda)\n2. Cuentas: Cada empleado tiene su propia cuenta. No se comparten contraseñas. Se activa MFA. (Responsable: Encargado de sistemas)\n3. Avisos: Cualquier error o sospecha se informa al encargado dentro de las 24 hs por el canal oficial. (Responsable: Encargado de turno)\n\n¿Quién las revisa?: El dueño o encargado, una vez por mes.",
+      "I": "",
+      "V": ""
+    },
+    {
+      "P": "8. Leé un reporte - Reporte: \"Software de la tienda sin actualizar.\". Revisiones previas y comprobación posterior.",
+      "R": "¿Qué revisaría antes de actualizar?\n- Qué versión está instalada actualmente.\n- Si hay respaldo reciente de la base de datos.\n- Si la actualización es compatible con la web y con el proveedor de pagos.\n- Horario de baja actividad (por ejemplo, de noche).\n\n¿Cómo comprobaría después que todavía se pueden registrar pedidos?\nHaría una prueba controlada: cargar un pedido de prueba con datos inventados, verificar que aparece en el sistema, que llega la confirmación al correo y que el pago simulado se procesa. Si todo funciona, recién ahí lo doy por bueno.",
+      "I": "",
+      "V": ""
+    },
+    {
+      "P": "9. Mejorá el acceso - Problema: clientes y PC de ventas usan la misma WiFi.",
+      "R": "Mejora: crear dos redes WiFi separadas:\n- WiFi Clientes: solo acceso a Internet, sin ver la red interna.\n- WiFi Ventas: red de trabajo, con contraseña distinta y sin acceso para visitantes.\n\nFirewall: se coloca entre ambas redes para que los clientes no puedan comunicarse con la PC de ventas ni con la base de datos.\n\nMFA: se activa en la cuenta de ventas y en la del administrador. Así, aunque alguien robe la contraseña, necesita el segundo factor para entrar.",
+      "I": "",
+      "V": ""
+    },
+    {
+      "P": "10. Interpretá herramientas - Nmap: 443 open, 21 closed | Wireshark: consulta DNS antes de entrar a la tienda.",
+      "R": "Puerto cerrado: 21 (corresponde a FTP, que no está disponible).\n\n¿Para qué sirve DNS?\nTraduce nombres de dominio (por ejemplo, www.tienda-demo.com) a direcciones IP, para que la computadora sepa a qué servidor conectarse. Sin DNS tendríamos que escribir números IP.\n\n¿Esto confirma que hay un ataque?\nNo. Que el puerto 443 esté abierto y que se vea una consulta DNS solo indica funcionamiento normal de la web. Para hablar de ataque habría que ver comportamientos extraños (escaneos, intentos de login fallidos, tráfico hacia IPs sospechosas, etc.).",
+      "I": "",
+      "V": ""
+    }
+  ]
+}
