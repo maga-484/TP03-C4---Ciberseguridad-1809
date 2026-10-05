@@ -1,6 +1,5 @@
 // =====================================================
 // index.js - Carga el JSON y genera tarjetas didácticas
-// TP 03 - Ciberseguridad
 // =====================================================
 
 const renderizarRespuestasTP = () => {
@@ -32,19 +31,19 @@ const renderizarRespuestasTP = () => {
 
         const titulo = document.createElement("span");
         titulo.classList.add("titulo-pregunta");
-        // Título corto: lo que está antes del primer " - "
+        // Título corto (antes del " - ")
         titulo.textContent = item.P.split(" - ")[0] || item.P;
 
         summary.appendChild(num);
         summary.appendChild(titulo);
         details.appendChild(summary);
 
-        // --- PREGUNTA COMPLETA (visible, debajo del summary) ---
+        // --- PREGUNTA COMPLETA (siempre visible, debajo del summary) ---
         const preguntaCompleta = document.createElement("p");
         preguntaCompleta.classList.add("pregunta-completa");
         // Parte después del " - " (el enunciado real)
-        const enunciado = item.P.split(" - ").slice(1).join(" - ");
-        preguntaCompleta.textContent = enunciado || item.P;
+        preguntaCompleta.textContent =
+          item.P.split(" - ").slice(1).join(" - ") || item.P;
         details.appendChild(preguntaCompleta);
 
         // --- RESPUESTA ---
